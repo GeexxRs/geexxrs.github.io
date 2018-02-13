@@ -1,0 +1,160 @@
+<!doctype HTML>
+<html lang="en">
+    
+    <head>
+
+        <title> AUDIO PLAYER </title>
+
+        <script src="p5/p5.js"></script>
+        <script src="p5/addons/p5.sound.js"></script>
+        <script src="p5/addons/p5.dom.js"></script>
+        <script src="ui-master/NexusUI.js"></script>
+        <script src="script.js"></script>
+        
+        <style>
+            
+            #p5_loading{
+                position:relative;
+                padding-left: 35%;
+                padding-top: 10%;
+            }
+            
+            .part1{
+                position: relative;
+                margin-left: 24%;
+            }
+            
+            .part2{
+                position: relative;
+                margin-left: 24%;
+                padding-top: 330px;
+            }
+            
+            section{
+                width: 100vw;
+                height: 80vh;
+                position: absolute;
+                padding-top: 60px;
+            }
+            
+            .botones{
+                padding-top: 40px;
+            }
+            
+            #songs{
+                cursor: pointer;
+            }
+            
+            #boton1,
+            #boton2,
+            #boton3,
+            #boton4,
+            #boton5{
+                float: left;
+                padding-right: 7%;
+                cursor: pointer;
+            }
+            
+            p{
+                text-align: center;
+            }
+            
+            
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div id="p5_loading" class="loadingclass">
+            <img src="img/lg.rotating-balls-spinner.gif">
+        </div>
+        
+        <section>
+            
+            
+            
+            <!-- Espectrograma 
+            <div class="part1">
+
+                <div id="spect"></div>
+                <script>
+                    var spectrogram = new Nexus.Spectrogram('#spect',{
+                    'size': [600,300]
+                    })
+                </script>
+
+            </div> -->
+            
+
+            <!-- controles -->
+            <div class="part2">
+                
+                <!-- selección de canciones -->
+                <div id="songs"></div>
+                <script>
+                    
+                    var selection = new Nexus.Select('#songs',{
+                    'size': [600,30],
+                    'options': ['Choose a song!! :)', "Paramore - That's What You Get",'Paramore - Misery Business','Paramore - Crushcrushcrush']
+                    })
+                    
+                </script>
+                
+                
+                <!-- botones -->
+                <div class="botones">
+                    
+                    <div id="boton1"><p>aleatorio</p></div>
+                    <script>
+                        var button1 = new Nexus.Button('#boton1',{
+                        'size': [60,60],
+                        'mode': 'toggle',
+                        'state': false
+                        })
+                    </script>
+
+                    <div id="boton2"><p>anterior</p></div>
+                    <script>
+                        var button2 = new Nexus.Button('#boton2',{
+                        'size': [60,60],
+                        'mode': 'toggle',
+                        'state': false
+                        })
+                    </script>
+
+                    <div id="boton3"><p>play/pause</p></div>
+                    <script>
+                        var button3 = new Nexus.Button('#boton3',{
+                        'size': [60,60],
+                        'mode': 'toggle',
+                        'state': false
+                        })
+                    </script>
+
+                    <div id="boton4"><p>siguiente</p></div>
+                    <script>
+                        var button4 = new Nexus.Button('#boton4',{
+                        'size': [60,60],
+                        'mode': 'toggle',
+                        'state': false
+                        })
+                    </script>
+
+                    <div id="boton5"><p>loop</p></div>
+                    <script>
+                        var button5 = new Nexus.Button('#boton5',{
+                        'size': [60,60],
+                        'mode': 'toggle',
+                        'state': false
+                        })
+                    </script>
+                
+                </div>
+                
+            </div>
+
+        </section>
+    </body>
+    
+</html>
