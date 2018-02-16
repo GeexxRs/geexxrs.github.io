@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+
+        <title>Piano Review</title>
+
+        <script src="p5/p5.js"></script>
+        <script src="p5/addons/p5.sound.js"></script>
+        <script src="p5/addons/p5.dom.js"></script>
+        <script src="ui-master/dist/NexusUI.js"></script>
+        <script src="script.js"></script>
+        
+        <style>
+            
+            #piano{
+                padding: 15%;
+            }
+            
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <div id="piano"></div>
+        <script>
+            
+            var piano1 = new Nexus.Piano('#piano',{
+            'size': [500,125],
+            'mode': 'button',
+            'lowNote': 60,
+            'highNote': 96
+            })
+            
+            piano1.on('change',function(v) {
+            //console.log(v.note);
+                //console.log(v.state);
+                keyPressed(v);
+            })
+        </script>
+        
+    </body>
+    
+</html>
